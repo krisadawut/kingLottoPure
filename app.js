@@ -9,6 +9,12 @@ var adminNewsRouter = require('./routes/admin_news');
 var adminTypeRouter = require('./routes/admin_type');
 var adminUserTypeRouter = require('./routes/admin_usertype');
 
+//api
+var usersRouter = require('./routes/api/users');
+var NewsRouter = require('./routes/api/news');
+var typeRouter = require('./routes/api/type');
+var usertypeRouter = require('./routes/api/usertype');
+//
 
 var app = express();
 
@@ -26,6 +32,12 @@ app.use('/', indexRouter);
 app.use('/admin_news', adminNewsRouter);
 app.use('/admin_type', adminTypeRouter);
 app.use('/admin_usertype', adminUserTypeRouter);
+
+//api
+app.use('/api/news', NewsRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/type', typeRouter);
+app.use('/api/usertype', usertypeRouter);
 
 
 // catch 404 and forward to error handler
