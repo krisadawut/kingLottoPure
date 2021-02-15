@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var adminNewsRouter = require('./routes/admin_news');
 var adminTypeRouter = require('./routes/admin_type');
 var adminUserTypeRouter = require('./routes/admin_usertype');
+var adminUserRouter = require('./routes/admin_user');
+var adminUser_viewRouter = require('./routes/adminUser_view');
 
 //api
 var usersRouter = require('./routes/api/users');
@@ -32,6 +34,9 @@ app.use('/', indexRouter);
 app.use('/admin_news', adminNewsRouter);
 app.use('/admin_type', adminTypeRouter);
 app.use('/admin_usertype', adminUserTypeRouter);
+app.use('/admin_user', adminUserRouter);
+app.use('/admin_user_view', adminUser_viewRouter);
+
 
 //api
 app.use('/api/news', NewsRouter);

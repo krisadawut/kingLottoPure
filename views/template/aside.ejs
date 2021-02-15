@@ -1,14 +1,113 @@
-<link rel="stylesheet" href="/stylesheets/main-layout.css">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<nav>
+<style type="text/css">
+    .container-nav{
+        width: 190px;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container-nav ul, li{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        /* font: inherit; */
+        vertical-align: baseline;
+    }
+    .nav-icon{
+        background-color: #2A2D35;
+        width: 190px;
+        /* border: red solid 1px; */
+        text-align: center;
+        padding-top: 5px;
+    }
+    .nav-icon li{
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 35px;
+        /* border: solid 1px red; */
+    }
+    .nav-icon i{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        
+    }
+    .user-detail{
+        background-color: #2A2D35;
+        width: 190px;
+        /* border: red solid 1px; */
+        padding-top: 10px;
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    .user-detail li{
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    
+    nav{
+        /* position:fixed; */
+        background-color: #2A2D35;
+        width: 190px;
+        height: 100%;   
+        /* overflow: scroll; */
+    }
+    nav ul li a{
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        position: relative;
+    }
+    nav ul li ul li a{
+        padding-left: 40px;
+    }
+    nav .section-menu li ul{
+        padding-bottom: 10px;
+        display: none;
+    }
+
+    nav .section-menu ul li{
+        list-style: none;    
+        line-height: 30px;
+    }
+    .menu li{
+        border-bottom: 1px solid rgb(80, 78, 80);
+        font-size: 14px;
+        
+    }
+    .menu li ul li{
+        border: none;
+    }
+    .menu li a{
+        color: white;
+    }
+    .menu li a:hover{
+        color: cyan;
+        background-color: #1e1e1e;
+    }
+
+    .menu a span{
+        position: absolute;
+        right: 10px;
+        top: 30%;
+    }
+    .menu li ul li a{
+        font-size: 12px;
+    }
+</style>
+
+
+<nav class="container-nav">
     <div class="nav-icon">
         <ul>
-            <li style="background-color:#87b87f !important ;"><i class="fas fa-pen-nib fa-lg"></i></li>
-            <li style="background-color:#6fb3e0 !important"><i class="fas fa-address-card fa-lg" ></i></li>
-            <li style="background-color: #ffb752 !important;"><i class="fas fa-calculator fa-lg"></i></li>
-            <li style="background-color: #d15b47 !important;"><i class="fas fa-donate fa-lg"></i></li>
+            <li style="background-color:#87b87f !important ;"><i class="fa fa-table" aria-hidden="true"></i></li>
+            <li style="background-color:#6fb3e0 !important"><i class="fa fa-users" aria-hidden="true"></i></li>
+            <li style="background-color: #ffb752 !important;"><i class="fa fa-bar-chart" aria-hidden="true"></i></li>
+            <li style="background-color: #d15b47 !important;"><i class="fa fa-refresh" aria-hidden="true"></i></li>
         </ul>
     </div>
     <div class="user-detail">
@@ -23,7 +122,7 @@
         <ul class="menu">
             <li><a href="/" class="menu0"> Dashboard </a></li> 
             <li><a href="#" class="menu1"> รายการแทง 
-                    <span class="fas fa-caret-down"></span>
+                    <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="sub-menu1">
                     <li><a href="#">1.ดูของรวม/คาดคะเนได้เสีย</a></li>
@@ -36,7 +135,7 @@
                 </ul>
             </li>
             <li><a href="#" class="menu2">จัดการสมาชิก
-                    <span class="fas fa-caret-down"></span>
+                    <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="sub-menu2">
                     <li><a href="#">1.เพิ่มสมาชิก</a></li>
@@ -47,7 +146,7 @@
                 </ul>
             </li>
             <li><a href="#" class="menu3">รายการแพ้ชนะ
-                    <span class="fas fa-caret-down"></span>
+                    <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="sub-menu3">
                     <li><a href="#">1.แพ้-ชนะ สมาชิก/ประเภท</a></li>
@@ -57,7 +156,7 @@
                 </ul>
             </li>
             <li><a href="#" class="menu4">การเงิน
-                <span class="fas fa-caret-down"></span>
+                <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="sub-menu4">
                     <li><a href="#">1.เติมเงิน</a></li>
@@ -65,17 +164,20 @@
                 </ul>
             </li>
             <li><a href="#" class="menu5">Admin
-                <span class="fas fa-caret-down"></span>
+                <span class="fa fa-angle-down"></span>
                 </a>
                 <ul class="sub-menu5">
                     <li><a href="/admin_news">1.แก้ไขข่าวประกาศ</a></li>
                     <li><a href="/admin_type">2.ตั้งค่าประเภทหวย</a></li>
                     <li><a href="/admin_usertype">3.ตั้งค่าประเภทผู้ใช้งาน</a></li>
+                    <!-- <li><a href="/admin_user">4.ตั้งค่าผู้ใช้งาน</a></li> -->
+                    <li><a href="/admin_user_view">Users View</a></li>
                 </ul>
             </li>
         </ul>
     </div>
 </nav>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
     $('.menu0').click(function(){
         $('.sub-menu1').slideUp(200);

@@ -18,9 +18,9 @@ router.post('/controlUsertype', function(req, res, next) {
     let UserTypeId = req.body.UserTypeId;
     let UserTypeCode = req.body.UserTypeCode;
     let UserTypeName = req.body.UserTypeName;
-    console.log(UserTypeId);
-    console.log(UserTypeCode);
-    console.log( UserTypeName );
+    // console.log(UserTypeId);
+    // console.log(UserTypeCode);
+    // console.log( UserTypeName );
     if (btn == 'Add'){
                   request.post({
                       headers: {'content-type' : 'application/json'},

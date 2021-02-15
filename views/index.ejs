@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/news.css' />
     <title><%= title %></title>
-    
+
   </head>
   <body>
     <div class="main">
@@ -23,7 +23,7 @@
       </article>
       <article id="article-body">
           <div id="menu-title">
-              <%= text +' '   %>
+              <%= text +' '+ Users[0].UserName  %>
           </div>
           <br>
           <div id="noti-welcome">
@@ -50,11 +50,11 @@
                   </td><td><%- i.News_Detail %></td></tr>
                 <% }); %>
               </table>
-              
+
             </div>
           </div>
       </article>
-      
+
     </div>
   </body>
 </html>
