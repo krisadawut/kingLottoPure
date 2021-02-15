@@ -7,11 +7,9 @@ const app = require('../app');
 const GetDataAPI = require("../CallAPI/GetDataAPI")
 const userControllers = require("../controllers/UserControllers")
 
-
 router.get('/', function(req, res, next) {
   GetDataAPI.ApiUsers(function(rs_user){
-      xxx = rs_user.data;
-      res.render('admin_user', { title: 'ผู้ดูแลระบบ',text: 'Admin' ,user: xxx });
+      res.render('admin_user', { title: 'ผู้ดูแลระบบ',text: 'Admin' ,user: rs_user.data });
   });
 });
 

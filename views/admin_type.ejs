@@ -1,38 +1,34 @@
+<%- include template/library %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/dtable.css' />
     
-    <script src="/ckeditor4/ckeditor.js"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/admin_news.css' />
     <title><%= title %></title>
-    
+      
   </head>
   <body>
-    <div class="main">
+    <div id="main-wrapper">
       <header><%- include template/header %></header>
-      <footer><%- include template/footer %></footer>
       <aside><%- include template/aside %></aside>
+      <footer><%- include template/footer %></footer>
       <article id="article-nav">
           <ul>
-              <li><i class="ace-icon fa fa-home home-icon"></i></li>
-              <li><i class="fas fa-angle-double-right" style="font-size: 10px;"></i></li>
+              <li><i class="fa fa-home" aria-hidden="true"></i></li>
+              <li><i class="fa fa-chevron-right" style="font-size: 10px;"></i></li>
               <li><%= title %></li>
           </ul>
       </article>
       <article id="article-body">
-        <div id="menu-title">
-          <%= text  %>
-        </div>
-        <br>
-        <div id="type-head">
-          <i class="fas fa-angle-double-right"></i> แก้ไขประเภทหวย
-        </div>
-        <br>
-        <div id="type-edit">
+        <!-- Title --> 
+        <div id="menu-title"> <%= text  %> </div> <br>
+        <!-- Topic --> 
+        <div><i class="fa fa-chevron-circle-right" style="font-size: 15px;"></i> แก้ไขประเภทหวย </div> <br>
+
+        <!-- Content --> 
+        <div style="color: black; min-height: 500px; padding: 20px; ">
           <form action="admin_type/controltype" method="POST">
               <input type="text" name="typecode" value="">
               <input type="text" name="typename" value="">
@@ -58,3 +54,4 @@
     </div>
   </body>
 </html>
+<%- include template/library %>
